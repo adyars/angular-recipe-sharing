@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+
+@Component({
+  selector: 'app-create-recipe',
+  standalone: true,
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  templateUrl: './create-recipe.component.html',
+  styleUrl: './create-recipe.component.scss'
+})
+export class CreateRecipeComponent {
+
+  recipeItem:any={
+    title:""
+  }
+
+  onSubmit(){
+    console.log("values", this.recipeItem)
+  }
+
+}
