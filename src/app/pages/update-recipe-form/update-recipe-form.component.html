@@ -1,10 +1,12 @@
+<h1 class="text-center pt-5">Update Recipe : </h1>
 <form (ngSubmit)="onSubmit()" class="w-[27rem] p-6 rounded-lg shadow-md">
 
     <div class="mb-4">
             <mat-form-field class="w-full">
               <mat-label class="text-gray-200">Title</mat-label>
               <input matInput 
-              placeholder="title..." value=""
+              placeholder="title..." 
+              value="recipeItem.title"
               name="title"
               [(ngModel)]="recipeItem.title"
               class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
@@ -15,7 +17,8 @@
         <mat-form-field class="w-full">
           <mat-label class="text-gray-200">Description</mat-label>
           <input matInput 
-          placeholder="Description..." value=""
+          placeholder="Description..." 
+          value="recipeItem.description"
           name="description"
           [(ngModel)]="recipeItem.description"
           class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
@@ -23,7 +26,11 @@
         </mat-form-field>
     </div>
     <div class="mb-4">
-            <mat-radio-group name="foodType" [(ngModel)]="recipeItem.foodType" aria-label="Select an option">
+            <mat-radio-group 
+            name="foodType" 
+            [(ngModel)]="recipeItem.foodType" 
+            value="recipeItem.foodType"
+            aria-label="Select an option">
                 <mat-radio-button value="non_veg">Non Vegan</mat-radio-button>
                 <mat-radio-button value="veg">Vegan</mat-radio-button>
               </mat-radio-group>     
@@ -32,7 +39,8 @@
         <mat-form-field class="w-full">
           <mat-label class="text-gray-200">Image</mat-label>
           <input matInput 
-          placeholder="Image URL" value=""
+          placeholder="Image URL" 
+          value="recipeItem.image"
           name="image"
           [(ngModel)]="recipeItem.image"
           class="py-2 px-3 text-gray-200 mt-1 focus:shadow-outline"
