@@ -1,15 +1,13 @@
 <mat-card class="example-card">
     <mat-card-header>
       <img mat-card-avatar src="https://images.pexels.com/photos/27514901/pexels-photo-27514901/free-photo-of-woman-in-hat-sitting-with-hand-on-cheek.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load" alt="">
-      <mat-card-title>Learning Code</mat-card-title>
+      <mat-card-title>{{recipe.user.fullName}}</mat-card-title>
       <mat-card-subtitle>learn_code</mat-card-subtitle>
     </mat-card-header>
-    <img class="max-h-[400px] object-cover"mat-card-image src="https://images.pexels.com/photos/745767/pexels-photo-745767.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Photo of girl">
+    <img class="max-h-[400px] object-cover"mat-card-image [src]="recipe.image" alt="Photo of girl">
     <mat-card-content>
       <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
+        {{recipe.description}}
       </p>
     </mat-card-content>
     <mat-card-actions class="flex justify-between">
@@ -25,7 +23,7 @@
         </button>
       </div>
       <div>
-        <button mat-icon-button aria-label="Example icon button with a heart icon">
+        <button (click)="handleDeleteRecipe()" mat-icon-button aria-label="Example icon button with a heart icon">
           <mat-icon>delete</mat-icon>
         </button>
       </div>
